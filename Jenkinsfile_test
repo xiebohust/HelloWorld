@@ -1,7 +1,15 @@
-node {
-	stage('Test invoke env params') {
-		echo "Build id : ${env.BUILD_ID}"
-                echo "Job Name : ${env.JOB_NAME}"
-                echo "Jenkins url : ${env.JENKINS_URL}"
+// Declarative //
+pipeline {
+	agent any
+	parameters {
+		string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I
+		greet the world?')
+		}
+	stages {
+		stage('Example') {
+			steps {
+				echo "${params.Greeting} World!"
+			}
+		}
 	}
 }
