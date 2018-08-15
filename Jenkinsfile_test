@@ -1,7 +1,7 @@
 node {
 	stage('Test invoke env params') {
-		echo 'Build id : env.BUILD_ID'
-    echo 'Job Name : env.JOB_NAME'
-    echo 'Jenkins url : env.JENKINS_URL'
+		echo 'Build id : ${env.BUILD_ID}'
+                echo 'Job Name : ${env.JOB_NAME}'
+                echo 'Jenkins url : ${env.JENKINS_URL}'
 	}
 }
